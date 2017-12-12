@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SubFormModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <FirstName>Axel</FirstName>
-  <SurName>Kristjansson</SurName>
-  <Email>axel@dkdk.dk</Email>
-  <PhoneNumber>5555</PhoneNumber>
+<SubFormModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" SerialNo="2">
+  <Firstname>asdf</Firstname>
+  <Surname>qwerty</Surname>
+  <Email>axee</Email>
+  <Phonenumber>111</Phonenumber>
   <Birthday>110217</Birthday>
-  <SerialNo>1</SerialNo>
 </SubFormModel>
