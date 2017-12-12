@@ -23,25 +23,6 @@ namespace Axkri10_Draw.Models
         public int PhoneNumber { get; set; }
         [Required(ErrorMessage = " birthdate required")]
         public int Birthday { get; set; }
-        
-
-        //public SubFormModel() { }
-
-        //public SubFormModel(int serialNo, String firstName, String surName, String email, int phoneNumber, int birthday)
-        //{
-        //    SerialNo = serialNo;
-        //    FirstName = firstName;
-        //    SurName = surName;
-        //    Email = email;
-        //    PhoneNumber = phoneNumber;
-        //    Birthday = birthday;
-            
-        //}
-
-        ////public SubFormModel(SubFormModel subform)
-        ////{
-        ////    this.subform = subform;
-        ////}
 
         public override string ToString()
         {
@@ -49,7 +30,5 @@ namespace Axkri10_Draw.Models
                 " PhoneNumber: " + PhoneNumber + " Birthday: " + Birthday + " SerialNo: " + SerialNo);
 
         }
-
     }
-
 }

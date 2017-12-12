@@ -4,87 +4,33 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Web;
-using System.Xml;
 using System.Xml.Serialization;
 
 namespace Axkri10_Draw
 {
-    
-    public class XmlSerialization
+
+    public static class XmlSerialization
     {
-        
-        private string XmlFileSubmissions = "~/App_Data/submissions.xml";
-        private string XmlSerials = "~/App_Data/serials.xml";
-        
-        private XmlSerializer serializer;
 
-        public void Serialize<T>(List<T> list, String fileName)
+        public static void WriteToXmlFile(SubFormModel subform, string path, Boolean append)
         {
-            if (list == null) { return; }
-
-            try
+            XmlSerializer serializer = new XmlSerializer(typeof(SubFormModel));
+            using (TextWriter writer = new StreamWriter(path, append))
             {
-                XmlDocument xmldoc = new XmlDocument();
-
-                serializer = new XmlSerializer(list.GetType());
-
-                using (FileStream stream = new FileStream(fileName, FileMode.Create))
-                {
-                    serializer.Serialize(stream, list);
-                    stream.Position = 0;
-                    xmldoc.Load(stream);
-                    xmldoc.Save(fileName);
-                    stream.Close();
-                }
-
-            }
-            catch (FileNotFoundException e)
-            {
-                Console.WriteLine(e.StackTrace);
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.StackTrace);
-
+                serializer.Serialize(writer, subform);
             }
         }
 
-        public List<T> Deserialize<T>(String fileName)
+
+        public static void ReadFromXmlFile(SubFormModel subform, string path)
         {
-            var itemList = new List<T>();
-            serializer = new XmlSerializer(typeof(List<T>));
-            if (!File.Exists(fileName))
-            {
-                return itemList;
-            }
-            try
-            {
-                using (FileStream stream = new FileStream(fileName, FileMode.Open))
-                {
-                    itemList = (List<T>)serializer.Deserialize(stream);
+            XmlSerializer deserializer = new XmlSerializer(typeof(SubFormModel));
+            TextReader reader = new StreamReader(path);
+            object obj = deserializer.Deserialize(reader);
+            SubFormModel subformXmlData = (SubFormModel)obj;
 
-                }
-            }
-            catch (FileNotFoundException e)
-            {
-                Console.WriteLine(e.StackTrace);
-            }
+            reader.Close();
 
-            catch (Exception e)
-            {
-                Console.WriteLine(e.StackTrace);
-            }
-            return itemList;
-        }
-
-        public string GetSubmissionXML()
-        {
-            return XmlFileSubmissions;
-        }
-
-        public string GetSerialXML()
-        {
-            return XmlSerials;
         }
     }
 }

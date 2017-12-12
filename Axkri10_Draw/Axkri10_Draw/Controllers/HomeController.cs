@@ -12,17 +12,17 @@ namespace Axkri10_Draw.Controllers
     public class HomeController : Controller
     {
         string pathString = "~/App_Data/submissions.xml";
-        //private SubFormModel submodel;
-
+        
         [HttpGet]
         public ActionResult Index()
         {
+            
             return View();
         }
 
         [HttpPost]
          public ActionResult Index(SubFormModel submodel)
-        {
+         {
             string firstName = submodel.FirstName;
             string surName = submodel.SurName;
             string email = submodel.Email;
@@ -33,22 +33,18 @@ namespace Axkri10_Draw.Controllers
             ViewBag.Demo = submodel;
 
             string pathToFolder = Server.MapPath(pathString);
-
+         
             XmlSerialization.WriteToXmlFile(submodel, pathToFolder, true);
 
             return View();
-        }
+         }
 
         [HttpGet]
-        public ActionResult About(SubFormModel submodel)
+        public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "Submission list";
 
-            string pathToFolder = Server.MapPath(pathString);
-
-            XmlSerialization.ReadFromXmlFile(submodel, pathToFolder);
-
-            ViewBag.Display = submodel;
+            //ViewBag.Display = submodel;
 
             return View();
         }
