@@ -1,24 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SubFormModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" SerialNo="2">
-  <Firstname>asdf</Firstname>
-  <Surname>qwerty</Surname>
-  <Email>axee</Email>
-  <Phonenumber>111</Phonenumber>
-  <Birthday>110217</Birthday>
-</SubFormModel><?xml version="1.0" encoding="utf-8"?>
 <SubFormModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SerialNo>2</SerialNo>
-  <FirstName>Axel</FirstName>
-  <SurName>Kristjansson</SurName>
-  <Email>axel@dkdk.dk</Email>
-  <PhoneNumber>111111</PhoneNumber>
-  <Birthday>110217</Birthday>
-</SubFormModel><?xml version="1.0" encoding="utf-8"?>
-<SubFormModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SerialNo>1</SerialNo>
-  <FirstName>Axel</FirstName>
-  <SurName>sss</SurName>
-  <Email>axel@dkdk.dk</Email>
-  <PhoneNumber>4444</PhoneNumber>
+  <SerialNo>11</SerialNo>
+  <FirstName>Pølse</FirstName>
+  <SurName>Manden</SurName>
+  <Email>manden@pølse.net</Email>
+  <PhoneNumber>77711182</PhoneNumber>
   <Birthday>110217</Birthday>
 </SubFormModel>

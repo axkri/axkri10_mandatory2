@@ -27,10 +27,14 @@ namespace Axkri10_Draw
             XmlSerializer deserializer = new XmlSerializer(typeof(SubFormModel));
             TextReader reader = new StreamReader(path);
             object obj = deserializer.Deserialize(reader);
+            // obj bliver populated..???
             SubFormModel subformXmlData = (SubFormModel)obj;
 
-            reader.Close();
+            //subformXmlData.FirstName = subform.FirstName;
+            //subformXmlData.SurName = subform.SurName;
 
+            reader.Close();
+            
         }
     }
 }

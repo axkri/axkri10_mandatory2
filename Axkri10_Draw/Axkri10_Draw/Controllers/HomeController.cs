@@ -12,17 +12,22 @@ namespace Axkri10_Draw.Controllers
     public class HomeController : Controller
     {
         string pathString = "~/App_Data/submissions.xml";
+        SerialGenerator serialgenerator = new SerialGenerator();
         
         [HttpGet]
         public ActionResult Index()
         {
-            
+            serialgenerator.GenerateSerials();
+            //serialize the serials... 
+
             return View();
         }
 
         [HttpPost]
          public ActionResult Index(SubFormModel submodel)
          {
+            
+
             string firstName = submodel.FirstName;
             string surName = submodel.SurName;
             string email = submodel.Email;
@@ -40,12 +45,17 @@ namespace Axkri10_Draw.Controllers
          }
 
         [HttpGet]
-        public ActionResult About()
+        public ActionResult SubmissionList(SubFormModel submodel)
         {
             ViewBag.Message = "Submission list";
 
             //ViewBag.Display = submodel;
+            string pathToFolder = Server.MapPath(pathString);
 
+            // submodel bliver ikke populated??..
+            XmlSerialization.ReadFromXmlFile(submodel, pathToFolder);
+
+            //ViewBag.Display = submodel.FirstName;
             return View();
         }
 
