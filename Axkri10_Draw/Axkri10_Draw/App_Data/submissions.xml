@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SubFormModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <FirstName>Axel</FirstName>
+  <SurName>Kristjansson</SurName>
+  <Email>axel@dkdk.dk</Email>
+  <PhoneNumber>5555</PhoneNumber>
+  <Birthday>110217</Birthday>
+  <SerialNo>1</SerialNo>
+</SubFormModel>
